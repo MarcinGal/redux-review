@@ -1,11 +1,10 @@
 import { createStore, combineReducers } from 'redux'
 import { counterReducerName, incCounter, decCounter } from './state/counter'
-import { todoReducer } from './state/toDo'
+import { todoReducer, textChangeAction, setFilterAction } from './state/toDo'
 
 const reducer = combineReducers({
-    counterReducerName,
+    counterReducerName: counterReducerName,
     toDo: todoReducer
-
 })
 
 export const store = createStore(
@@ -19,4 +18,12 @@ window.dispatchIncCounter = () => {
 
 window.dispatchDecCounter = () => {
     store.dispatch(decCounter())
+}
+
+window.dispatchChangeToDoText = (taskText) => {
+    store.dispatch(textChangeAction(taskText))
+}
+
+window.dispatchSetToDoFilter = (filterValue) => {
+    store.dispatch(setFilterAction(filterValue))
 }

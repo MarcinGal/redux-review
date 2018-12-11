@@ -8,13 +8,13 @@ const TASKS_INITIAL_STATE = {
     currentFilter: 'ALL'
 }
 
-const textChangeAction = newValue => ({
+export const textChangeAction = newValue => ({
     type: TEXT_CHANGE,
     newValue
 })
 
 
-const setFilterAction = newFilter => {
+export const setFilterAction = newFilter => {
     const availablefilters = ['ALL', 'COMPLETED', 'UNCOMPLETED']
     if (!availablefilters.includes(newFilter)) {
         throw new Error('Not supported filter!')
@@ -25,10 +25,6 @@ const setFilterAction = newFilter => {
         newFilter
     }
 }
-
-const addAction = () => ({
-    type: ADD
-})
 
 export const todoReducer = (state = TASKS_INITIAL_STATE, action) => {
     switch (action.type) {

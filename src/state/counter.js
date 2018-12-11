@@ -1,5 +1,5 @@
 
-const INC = 'counter/INC' 
+const INC = 'counter/INC'
 const DEC = 'counter/DEC'
 
 const COUNTER_INITIAL_STATE = {

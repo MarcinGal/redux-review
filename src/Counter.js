@@ -1,38 +1,31 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { incCounter, decCounter } from './state/counter'
 
-
-const onClickIncHandler = () => {
-    alert('Man! You clicked +')
-}
-
-const onClickDecHandler = () => {
-    alert('Man! You clicked -')
-}
-
-
-const Counter = () => (
+const Counter = (props) => (
     <div>
-        <h1>Counter</h1>
+        <h1>Counter: {props._counter}</h1>
         <button
-            onClick={onClickIncHandler}
+            onClick={props._incCounter}
         >+</button>
         <button
-            onClick={onClickDecHandler}
+            onClick={props._decCounter}
         >-</button>
     </div>
 )
 
+
+
 const mapStateToProps = state => ({
-    _number: state.counter.number
+    _counter: state.counterReducerName.counter
 })
 
 const mapDispatchToProps = dispatch => ({
+    _incCounter: () => dispatch(incCounter()),
+    _decCounter: () => dispatch(decCounter())
 })
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(Counter)
-
-// export default Counter

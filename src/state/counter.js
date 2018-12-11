@@ -1,11 +1,11 @@
 
+const INC = 'counter/INC' 
+const DEC = 'counter/DEC'
 
 const COUNTER_INITIAL_STATE = {
     counter: 0
 }
 
-export const INC = 'INC'
-export const DEC = 'DEC'
 
 export const counterReducerName = (state = COUNTER_INITIAL_STATE, action) => {
     switch (action.type) {
@@ -23,3 +23,13 @@ export const counterReducerName = (state = COUNTER_INITIAL_STATE, action) => {
             return state
     }
 }
+
+
+
+export const incCounter = () => ({
+    type: INC
+})
+
+export const decCounter = () => ({
+    type: DEC
+})

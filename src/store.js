@@ -1,8 +1,11 @@
 import { createStore, combineReducers } from 'redux'
 import { counterReducerName, incCounter, decCounter } from './state/counter'
+import { todoReducer } from './state/toDo'
 
 const reducer = combineReducers({
-    counterReducerName
+    counterReducerName,
+    toDo: todoReducer
+
 })
 
 export const store = createStore(

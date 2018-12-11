@@ -14,8 +14,6 @@ const Counter = (props) => (
     </div>
 )
 
-
-
 const mapStateToProps = state => ({
     _counter: state.counterReducerName.counter
 })
